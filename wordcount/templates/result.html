@@ -1,12 +1,73 @@
-<h1>당신이 입력한 텍스트는 {{total}} 로 구성되어 있습니다.</h1>
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    header{
+        text-align: right;
+    }
+    body{
+        background-image:linear-gradient(to bottom right, plum, mintcream);
+        background-repeat: no-repeat;
+        height:700px;
 
-<a href="{%url 'home'%}">다시하기</a>
-<br>
-<h2> 입력한 텍스트: </h2>
-{{full}}
+    }
+    .grid-container{
+        display:grid;
+        grid-template-columns: auto auto auto;
+        grid-gap:20px 0px;
+        width:300px;
+        height:300px;
+        padding:50px;
+        margin:auto;
+        
+    }
+    .grid-container>div{
+        background-color:white;
+        text-align:center;
+        padding:20px 0px;
+        font-size:15px;
+    }
+    .item{
+        box-shadow: 0 15px 10px rgba(0, 0, 0, 0.3);
+        grid-row-start:2;
+        grid-row-end:3;
+        grid-column-start:2;
+        grid-column-end:3;
+        border-radius: 25px;
+        background:white;
+        padding: 20px; 
+        width: 300px;
+        height: 200px; 
+        
+    }
+    .introduction h1{
+        width:350px;
+        grid-row-start:1;
+        grid-row-end:2;
+        grid-column-start:1;
+        grid-column-end:2;
+        text-align:left;
+        font-size:10px;
+        font-weight:lighter;
+        color:black;
+    }
 
-<h2> 단어 카운트: </h2>
-{% for word, howmany in dic%}
-{{word}}::{{howmany}}
-<br>
-{%endfor%}
+</style>
+</head>
+<body>
+        <h1>당신이 입력한 텍스트는 {{total}} 로 구성되어 있습니다.</h1>
+
+        <a href="{%url 'home'%}">다시하기</a>
+        <br>
+        <h2> 입력한 텍스트: </h2>
+        {{full}}
+        
+        <h2> 단어 카운트: </h2>
+        {% for word, howmany in dic%}
+        {{word}}::{{howmany}}
+        <br>
+        {%endfor%}
+        
+</body>
+</html>
+
